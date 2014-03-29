@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title KoreYomo
+    = stylesheet_link_tag 'application', media: 'all', data: { turbolinks_track:  true }
+    = javascript_include_tag 'application', data: { turbolinks_track: true }
+    = csrf_meta_tags
+  body
+    - if @current_user
+      p
+       | ようこそ
+       = current_user.name
+       = 'さん '
+       = link_to 'ログアウト', logout_path
+    - else
+       = link_to 'ログイン', '/auth/twitter'
+    .navbar.navbar-inverse.navbar-static-top
+      .container
+        .navbar-header
+          = link_to 'Home Page', root_path
+
+    div.container
+      - if flash[:notice]
+        div.alert.alert-success = flash[:notice]
+      - if flash[:alert]
+        div.alert.alert-danger = flash[:alert]
+
+      = yield

@@ -1,0 +1,24 @@
+development:
+  database: koreyomo_development
+  adapter: mysql2
+# TODO: wanna replace in rails4.1.0
+#  encoding: utf8mb4
+  encoding: utf8
+  pool: 5
+  username: 'root'
+  password:
+  host: 'localhost'
+  port:
+  socket:
+test:
+  database: koreyomo_test
+  adapter: mysql2
+# TODO: wanna replace in rails4.1.0
+#  encoding: utf8mb4
+  encoding: utf8
+  pool: 5
+  username: 'root'
+  password:
+  host: 'localhost'
+  port:
+  socket:
