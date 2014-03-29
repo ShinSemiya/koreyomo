@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140310131651) do
+ActiveRecord::Schema.define(version: 20140329092629) do
 
   create_table "archives", force: true do |t|
     t.integer  "user_id"
@@ -33,7 +33,21 @@ ActiveRecord::Schema.define(version: 20140310131651) do
 
   add_index "books", ["archive_id"], name: "index_books_on_archive_id", using: :btree
 
+  create_table "tasks", force: true do |t|
+    t.string   "name"
+    t.string   "state"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
+    t.string   "provider"
+    t.string   "uid"
+    t.string   "screen_name"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
     t.string   "email",                              default: "", null: false
     t.string   "encrypted_password",                 default: "", null: false
     t.string   "reset_password_token",   limit: 200
@@ -48,4 +62,5 @@ ActiveRecord::Schema.define(version: 20140310131651) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
 end

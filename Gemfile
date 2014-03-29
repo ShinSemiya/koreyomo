@@ -46,6 +46,9 @@ gem 'devise'
 
 gem "slim-rails"
 
+# Model Enhancements
+gem 'state_machine'
+
 group :development, :test do
   # Web Server
   gem 'puma'
@@ -70,4 +73,8 @@ group :development, :test do
   # Factory
   gem 'factory_girl_rails'
   gem 'ffaker' # Generates dummy names
+end
+
+group :test do
+  gem "shoulda-matchers"
 end
