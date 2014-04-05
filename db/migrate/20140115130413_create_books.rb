@@ -5,6 +5,7 @@ class CreateBooks < ActiveRecord::Migration
 
       t.integer :isbn
       t.string :title
+      t.string :author
       t.timestamps
     end
     add_index :books, :archive_id

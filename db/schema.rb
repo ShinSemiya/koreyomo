@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(version: 20140329092629) do
     t.integer  "archive_id"
     t.integer  "isbn"
     t.string   "title"
+    t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
