@@ -73,6 +73,8 @@ group :development, :test do
   # Factory
   gem 'factory_girl_rails'
   gem 'ffaker' # Generates dummy names
+
+  gem "twitter-bootstrap-rails"
 end
 
 group :test do
