@@ -1,4 +1,4 @@
 class Book < ActiveRecord::Base
   belongs_to :archive
-  validate_presence :title, :isbn,
+  validates_presence_of :title, :isbn
 end
