@@ -13,16 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20140419061450) do
 
-  create_table "archives", force: true do |t|
-    t.integer  "user_id"
-    t.string   "subject"
-    t.string   "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "archives", ["user_id"], name: "index_archives_on_user_id", using: :btree
-
   create_table "books", force: true do |t|
     t.integer  "archive_id"
     t.integer  "isbn"
