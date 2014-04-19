@@ -28,7 +28,7 @@ class TasksController < ApplicationController
   end
 
   def done
-    @tasks = Task.done
+    @tasks = Task.periodic_done(params[:period])
   end
 
   # POST /tasks

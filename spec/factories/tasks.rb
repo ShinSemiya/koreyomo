@@ -17,7 +17,7 @@ FactoryGirl.define do
         end
 
         if task.done?
-          task.update(done_point: task.progress_point)
+          task.update(done_point: task.progress_point, finished_at: Time.current)
         end
       end
     end

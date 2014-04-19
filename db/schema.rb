@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(version: 20140419074757) do
     t.datetime "updated_at"
     t.integer  "user_id"
     t.integer  "done_point"
+    t.datetime "finished_at"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree
