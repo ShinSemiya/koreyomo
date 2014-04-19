@@ -9,6 +9,10 @@ Koreyomo::Application.routes.draw do
   get '/auth/failure' => 'sessions#failure'
 
   resources :tasks do
+    collection do
+      get :done
+    end
+
     member do
       post :increase_point
     end

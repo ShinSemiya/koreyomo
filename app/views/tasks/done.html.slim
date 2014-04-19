@@ -1,0 +1,14 @@
+h1.page-header 終了タスク一覧
+
+table
+  tr
+    th タスク名
+    th 状態
+    th 合計ポイント
+
+  - @tasks.each do |task|
+    tr
+      td = task.name
+      td = task.state_name
+      td = task.done_point
+br
