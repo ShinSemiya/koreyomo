@@ -1,5 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   def index
     @books = Book.all
@@ -69,4 +70,7 @@ class BooksController < ApplicationController
     def book_params
       params[:book]
     end
+
+  def set_user
+  end
 end

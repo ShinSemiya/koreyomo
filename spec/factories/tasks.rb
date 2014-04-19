@@ -5,6 +5,7 @@ FactoryGirl.define do
     name "テストなタスク"
     size 1
     state 'wip'
+    association :user
 
     factory :dev_task do
       sequence(:name) { |n| "テストなタスク_#{n}" }

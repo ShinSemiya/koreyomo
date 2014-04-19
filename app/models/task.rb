@@ -1,4 +1,6 @@
 class Task < ActiveRecord::Base
+  belongs_to :user
+
   scope :wip, -> { where(state: 'wip') }
   scope :ready, -> { where(state: 'ready') }
 
