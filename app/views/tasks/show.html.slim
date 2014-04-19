@@ -13,6 +13,9 @@ dl
     dt 進捗
     dd = @task.progress_point
 
+ul
+  li = link_to '進捗を登録', increase_point_task_path(@task, point: 1), class: 'btn btn-default', method: :post
+
 = link_to '編集', edit_task_path(@task), class: 'btn btn-default'
 '　
 = link_to '戻る', tasks_path, class: 'btn btn-default'
