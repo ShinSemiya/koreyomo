@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419050904) do
+ActiveRecord::Schema.define(version: 20140419061450) do
 
   create_table "archives", force: true do |t|
     t.integer  "user_id"
@@ -35,6 +35,13 @@ ActiveRecord::Schema.define(version: 20140419050904) do
 
   add_index "books", ["archive_id"], name: "index_books_on_archive_id", using: :btree
   add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
+
+  create_table "task_points", force: true do |t|
+    t.integer  "point",      null: false
+    t.integer  "task_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", force: true do |t|
     t.string   "name"

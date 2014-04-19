@@ -22,6 +22,10 @@ class TasksController < ApplicationController
   def edit
   end
 
+  def increase_point
+    @task.increase_point
+  end
+
   # POST /tasks
   # POST /tasks.json
   def create
