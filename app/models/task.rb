@@ -31,4 +31,8 @@ class Task < ActiveRecord::Base
   def increase_point(point)
     self.task_points << TaskPoint.new(point: point)
   end
+
+  def progress_point
+    task_points.map(&:point).sum
+  end
 end
