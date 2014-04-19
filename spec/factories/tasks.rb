@@ -4,9 +4,11 @@ FactoryGirl.define do
   factory :task do
     name "テストなタスク"
     size 1
+    state 'wip'
 
     factory :dev_task do
       sequence(:name) { |n| "テストなタスク_#{n}" }
+      state { Task::STATE_NAME.keys.sample.to_sym }
     end
   end
 end

@@ -1,4 +1,7 @@
 class Task < ActiveRecord::Base
+  scope :wip, -> { where(state: 'wip') }
+  scope :ready, -> { where(state: 'ready') }
+
   STATE_NAME = {
     icebox: '積み',
     ready: '準備OK',
