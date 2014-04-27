@@ -1,0 +1,11 @@
+h3 作業中
+- @tasks_wip.each do |task|
+  = link_to task.name, task_path(task), class: 'btn btn-default'
+  br
+h3 積み
+- @tasks_ready.each do |task|
+  = link_to task.name, task_path(task), class: 'btn btn-default'
+  br
+
+br
+= link_to 'タスク一覧へ', tasks_path, class: 'btn btn-default'

@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe Task do
+describe Book do
   describe "Association" do
     it { should belong_to :user}
   end

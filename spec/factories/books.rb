@@ -3,6 +3,7 @@ FactoryGirl.define do
     isbn 123456789
     title "テストな書籍名"
     author "テストな著者"
+    association :user
 
     factory :dev_book do
       sequence(:isbn) { |n| n }

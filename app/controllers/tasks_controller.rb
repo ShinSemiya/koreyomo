@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /tasks
   # GET /tasks.json
@@ -71,4 +72,7 @@ class TasksController < ApplicationController
     def task_params
       params.require(:task).permit(:name, :size)
     end
+
+  def set_user
+  end
 end
