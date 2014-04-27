@@ -13,8 +13,6 @@ Koreyomo::Application.routes.draw do
       post :increase_point
     end
   end
-
-  resources :archives
   resources :books
 
   root 'home#index'
