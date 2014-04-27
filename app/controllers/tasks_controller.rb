@@ -27,6 +27,10 @@ class TasksController < ApplicationController
     render :show, notice: '進捗を登録しました'
   end
 
+  def done
+    @tasks = Task.periodic_done(params[:period])
+  end
+
   # POST /tasks
   # POST /tasks.json
   def create

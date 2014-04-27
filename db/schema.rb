@@ -11,10 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140419061450) do
+ActiveRecord::Schema.define(version: 20140419074757) do
 
   create_table "books", force: true do |t|
-    t.integer  "archive_id"
     t.integer  "isbn"
     t.string   "title"
     t.string   "author"
@@ -23,7 +22,6 @@ ActiveRecord::Schema.define(version: 20140419061450) do
     t.integer  "user_id"
   end
 
-  add_index "books", ["archive_id"], name: "index_books_on_archive_id", using: :btree
   add_index "books", ["user_id"], name: "index_books_on_user_id", using: :btree
 
   create_table "task_points", force: true do |t|
@@ -41,6 +39,8 @@ ActiveRecord::Schema.define(version: 20140419061450) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "done_point"
+    t.datetime "finished_at"
   end
 
   add_index "tasks", ["user_id"], name: "index_tasks_on_user_id", using: :btree

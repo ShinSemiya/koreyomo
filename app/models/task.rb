@@ -4,6 +4,10 @@ class Task < ActiveRecord::Base
 
   scope :wip, -> { where(state: 'wip') }
   scope :ready, -> { where(state: 'ready') }
+  scope :done, -> { where(state: 'done') }
+
+  scope :finished_in_week, -> { where(finished_at: 7.days.ago..Time.current) }
+  scope :finished_in_30_days, -> { where(finished_at: 30.days.ago..Time.current) }
 
   STATE_NAME = {
     icebox: '積み',
@@ -34,5 +38,18 @@ class Task < ActiveRecord::Base
 
   def progress_point
     task_points.map(&:point).sum
+  end
+
+  def self.periodic_done(period)
+    #TODO Must Refactor
+    if period.blank?
+      finished_in_week
+    elsif period == 'all'
+      done
+    elsif  period == 'week'
+      finished_in_week
+    elsif  period == 'month'
+      finished_in_30_days
+    end
   end
 end
