@@ -3,8 +3,9 @@ class CreateTasks < ActiveRecord::Migration
     create_table :tasks do |t|
       t.string :name
       t.string :state
+      t.integer :size
+      t.datetime :started_at
 
-      t.belongs_to :user
       t.timestamps
     end
   end

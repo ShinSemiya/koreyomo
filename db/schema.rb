@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329092629) do
+ActiveRecord::Schema.define(version: 20140407135453) do
 
   create_table "archives", force: true do |t|
     t.integer  "user_id"
@@ -37,7 +37,8 @@ ActiveRecord::Schema.define(version: 20140329092629) do
   create_table "tasks", force: true do |t|
     t.string   "name"
     t.string   "state"
-    t.integer  "user_id"
+    t.integer  "size"
+    t.datetime "started_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

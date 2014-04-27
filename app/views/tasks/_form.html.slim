@@ -7,6 +7,11 @@
           li = message
 
   .field
-    = f.label :name
-    = f.text_field :name
-  .actions = f.submit 'Save'
+    ul.list-group
+      li.list-group-item.list-group-item-info
+          strong タスク名
+      li.list-group-item = f.text_field :name
+      li.list-group-item.list-group-item-info
+        strong タスクサイズ
+      li.list-group-item = f.number_field :size
+  .actions = f.submit '保存', class: 'btn btn-danger'
