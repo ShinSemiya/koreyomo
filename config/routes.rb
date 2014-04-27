@@ -1,9 +1,6 @@
 Koreyomo::Application.routes.draw do
-  resources :tasks
-
   get "home/index"
   devise_for :users
-  get "home/index"
 
   # twitter-auth
   get '/auth/:provider/callback', :to => 'sessions#callback'
@@ -11,8 +8,13 @@ Koreyomo::Application.routes.draw do
   get '/logout' => 'sessions#destroy', :as => :logout
   get '/auth/failure' => 'sessions#failure'
 
-  resources :archives
+  resources :tasks do
+    member do
+      post :increase_point
+    end
+  end
 
+  resources :archives
   resources :books
 
   root 'home#index'

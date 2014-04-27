@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: [:show, :edit, :update, :destroy, :increase_point]
   before_action :set_user
 
   # GET /tasks
@@ -20,6 +20,11 @@ class TasksController < ApplicationController
 
   # GET /tasks/1/edit
   def edit
+  end
+
+  def increase_point
+    @task.increase_point(params[:point])
+    render :show, notice: '進捗を登録しました'
   end
 
   # POST /tasks

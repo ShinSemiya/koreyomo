@@ -12,6 +12,7 @@ table
     tr
       td = task.name
       td = task.state_name
+      td = link_to '進捗を登録', increase_point_task_path(task, point: 1), :method => :post
       td = link_to '詳細', task
       td = link_to '編集', edit_task_path(task)
       td = link_to '削除', task, data: {:confirm => 'Are you sure?'}, :method => :delete

@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :user
+  has_many :task_points
 
   scope :wip, -> { where(state: 'wip') }
   scope :ready, -> { where(state: 'ready') }
@@ -25,5 +26,13 @@ class Task < ActiveRecord::Base
 
   def state_name
     STATE_NAME[state.to_sym]
+  end
+
+  def increase_point(point)
+    self.task_points << TaskPoint.new(point: point)
+  end
+
+  def progress_point
+    task_points.map(&:point).sum
   end
 end
