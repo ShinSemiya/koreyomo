@@ -1,22 +1,16 @@
 h1.page-header タスク一覧
 
-table
+table.table.table-striped
   tr
     th タスク名
     th 状態
     th
-    th
-    th
 
   - @tasks.each do |task|
     tr
-      td = task.name
+      td = link_to task.name, task
       td = task.state_name
       td = link_to '進捗を登録', increase_point_task_path(task, point: 1), :method => :post
-      td = link_to '詳細', task
-      td = link_to '編集', edit_task_path(task)
-      td = link_to '削除', task, data: {:confirm => 'Are you sure?'}, :method => :delete
-
 br
 
 = link_to 'タスクを追加', new_task_path, class: 'btn btn-default'
