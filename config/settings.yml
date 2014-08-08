@@ -3,14 +3,14 @@ defaults: &defaults
 development:
   <<: *defaults
   twitter:
-    consumer_key: 2irEnkhjcGG0n9pIQimHlw
-    consumer_secret:  ymfIiexmVbOp7W8oiVdoOtGrSZ9S3cWjEeFhl4QSOe8
+    consumer_key: 
+    consumer_secret:  
 
 test:
   <<: *defaults
   twitter:
-    consumer_key: 2irEnkhjcGG0n9pIQimHlw
-    consumer_secret:  ymfIiexmVbOp7W8oiVdoOtGrSZ9S3cWjEeFhl4QSOe8
+    consumer_key: 
+    consumer_secret:  
 
 production:
   <<: *defaults
